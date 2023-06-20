@@ -8,3 +8,13 @@
     apt:
       name: apache2
       state: latest
+      update_cache: yes
+    when: ansible_distribution == "Ubuntu"
+
+  - name: install apache2 package
+    dnf:
+      name: httpd
+      state: latest
+      update_cache: yes
+    when: ansible_distribution == "CentOS"
+
