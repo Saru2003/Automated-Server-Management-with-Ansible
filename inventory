@@ -1,3 +1,7 @@
+[web_servers]
 ubun1@192.168.0.107
+sarveshw@192.168.0.108
+
+[db_servers]
 ubun2@192.168.0.112
 sarveshw@192.168.0.108
