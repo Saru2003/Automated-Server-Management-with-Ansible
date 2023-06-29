@@ -40,6 +40,10 @@
       state: latest
     when: ansible_distribution == "CentOS"
 
+  - name: shell httpd php
+    shell: systemctl start httpd; firewall-cmd --add-port=80/tcp
+    when: ansible_distribution == "CentOS"
+
   - name: copy def_site.html
     tags: apache
     copy:
@@ -65,5 +69,19 @@
       state: latest
     when: ansible_distribution == "CentOS"
 
+- hosts: only_terraform
+  become: true
+  tasks:
+  - name: install unzip
+    package:
+      name: unzip
 
+  - name: install tf
+    unarchive:
+      src: https://releases.hashicorp.com/terraform/1.0.7/terraform_1.0.7_linux_amd64.zip
+      dest: /usr/local/bin
+      remote_src: yes
+      mode: 0755
+      owner: root
+      group: root
 

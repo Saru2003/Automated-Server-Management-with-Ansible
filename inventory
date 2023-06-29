@@ -5,3 +5,6 @@ sarveshw@192.168.0.103
 [db_servers]
 ubun2@192.168.0.112
 sarveshw@192.168.0.103
+
+[only_terraform]
+ubun1@192.168.0.104
