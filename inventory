@@ -1,7 +1,7 @@
 [web_servers]
-ubun1@192.168.0.107
-sarveshw@192.168.0.108
+ubun1@192.168.0.104
+sarveshw@192.168.0.103
 
 [db_servers]
 ubun2@192.168.0.112
-sarveshw@192.168.0.108
+sarveshw@192.168.0.103
