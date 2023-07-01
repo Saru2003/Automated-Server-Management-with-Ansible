@@ -114,7 +114,7 @@ To list the available tags in a playbook
 ```bash
 ansible-playbook --list-tags site.yml
 ```
-
+<img src="images/Screenshot_20230701_130327.png">
 Running a playbook but targeting specific tags
 ```bash
  ansible-playbook --tags db --ask-become-pass site.yml
