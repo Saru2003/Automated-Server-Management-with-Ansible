@@ -48,7 +48,7 @@ ansible all --key-file ~/.ssh/ansible -i inventory -m ping
 
 ### Ad-hoc Commands
 Ansible provides a range of ad-hoc commands for executing tasks on managed servers. Here are some basic commands:
-
+<img src="images/Screenshot_20230701_162901.png">
 - `ansible all --list-hosts`: Lists all the hosts in the inventory.
 - `ansible all -m gather_facts`: Retrieves information about the servers, such as processor and operating system details.
 - `ansible all -m gather_facts --limit <ip_address>`: Limits the command to a specific host.
@@ -91,6 +91,9 @@ To automate this process, the following steps can be included in your Ansible pl
 By including these steps in your playbook, the Apache service will be started on CentOS, allowing communication on port 80. This ensures that when you type the IP address of a CentOS server in your local machine's browser, you will see the Apache page, indicating a successful setup.
 
 ## Site.yml: Customized Server Configuration
+<img src="images/Screenshot_20230701_130512.png">
+<img src="images/Screenshot_20230701_130546.png">
+
 In this section, we will explore the `site.yml` playbook and its functionalities. The `site.yml` playbook builds upon the concepts discussed earlier and provides further customization options for server configuration.
 
 ### Inventory Groups
@@ -106,6 +109,7 @@ Similar to the `ins_apache.yml` playbook, the `site.yml` playbook allows the exe
 ### Copying Files and Setting Permissions
 The `site.yml` playbook includes a task named `copy def_site.html` that copies a source file from the files group to the designated destination on the target hosts. 
 Additionally, appropriate user permissions are set for the copied file to ensure security and access control.
+<img src="images/Screenshot_20230701_130623.png">
 
 ### Utilizing Tags
 One notable addition in the `site.yml` playbook compared to `ins_apache.yml` is the use of `tags`. Tags allow for more granular control and selective execution of tasks.
