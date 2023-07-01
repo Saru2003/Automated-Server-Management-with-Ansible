@@ -14,7 +14,7 @@ Follow the instructions in the [SSH Installation Guide](https://github.com/Saru2
 
 #### 2. Ansible Installation:
 
-Proceed with the installation of Ansible by following the steps outlined in the [Ansible Installation Guide](https://github.com/Saru2003/Automated-Server-Management-with-Ansible/blob/main/ansible%20installation%20guide.md).
+To install Ansible, it is recommended to fetch the latest version available from the official Ansible website or the Ansible GitHub repository. By installing the latest version, you can benefit from the most recent features, bug fixes, and improvements.
 
 #### 3. Virtual Servers Setup:
 
