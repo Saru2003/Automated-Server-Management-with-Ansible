@@ -8,11 +8,11 @@ By leveraging the capabilities of Ansible, this solution simplifies the manageme
 
 To run this project, you will need to ensure that SSH and Ansible are properly installed and configured. Here are the high-level steps:
 
-#### 1. SSH Installation:
+#### 1. SSH setup:
 
-Follow the instructions in the [SSH Installation Guide](https://github.com/Saru2003/Automated-Server-Management-with-Ansible/blob/main/ssh%20installation%20and%20setup.md) for detailed instructions on installing and setting up SSH.
+After installing OpenSSH in your workstation and virtual servers, follow the instructions in the [SSH Setup Guide](https://github.com/Saru2003/Automated-Server-Management-with-Ansible/blob/main/ssh%20setup%20guide.md) for detailed instructions on setting up SSH.
 
-#### 2. Ansible Installation:
+#### 2. Ansible setup:
 
 To install Ansible, it is recommended to fetch the latest version available from the official Ansible website or the Ansible GitHub repository. By installing the latest version, you can benefit from the most recent features, bug fixes, and improvements.
 
