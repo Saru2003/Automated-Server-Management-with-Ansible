@@ -74,7 +74,7 @@ ansible all -m apt -a "name=snapd state=latest" --become --ask-become-pass
  ### Ansible Playbooks for Automation
 Ansible Playbooks allow us to define a list of tasks that automatically execute against hosts. Consider the example playbook `ins_apache.yml`, which installs the latest version of Apache and PHP packages and updates the cache. The playbook contains separate tasks for Ubuntu and CentOS distributions to handle the differences in package management.
 
-Under the task "Install Apache2 and PHP package, update cache for Ubuntu," the __apt__ module is used to install the packages and update the cache. For CentOS, the __dnf __module is used. 
+Under the task "Install Apache2 and PHP package, update cache for Ubuntu," the __apt__ module is used to install the packages and update the cache. For CentOS, the __dnf__ module is used. 
 
 After installing Apache on the servers, it is essential to ensure that the service is running and accessible. While typing the IP address of one of the servers in your local machine's browser should display the Apache page for Ubuntu, the same isn't true for CentOS. In CentOS, although Apache is installed, it needs to be started, and communication on port 80 must be allowed to make it accessible.
 
