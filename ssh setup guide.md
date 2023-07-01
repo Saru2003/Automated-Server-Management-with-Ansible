@@ -17,6 +17,7 @@ Here’s an alias you can put in your `.bashrc`, to simplify it
 alias ssha='eval $(ssh-agent) && ssh-add'
 ```
 Running the `ssha` alias before the session makes it convenient than typing the passphrase everytime you run the playbook.
+
 <img src="images/Screenshot_20230701_172453.png">
 
 
