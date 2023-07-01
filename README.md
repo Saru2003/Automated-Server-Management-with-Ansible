@@ -1,7 +1,8 @@
 
 # Automated Server Management with Ansible
 
-The "Automated Server Management with Ansible" project is a powerful configuration management solution that enables the automation of multiple servers using Ansible. With this project, you can streamline and automate server builds, updates, module installations, file and user management, service management, and more across multiple servers simultaneously. By leveraging the capabilities of Ansible, this solution simplifies the management and maintenance of server infrastructure, saving time and ensuring consistency across the entire server fleet. Whether you are managing a small-scale environment or a large-scale infrastructure, this project provides an efficient and scalable approach to automate server management tasks with ease.
+The "Automated Server Management with Ansible" project is a powerful configuration management solution that enables the automation of multiple servers using Ansible. With this project, you can streamline and automate server builds, updates, module installations, file and user management, service management, and more across multiple servers simultaneously. 
+By leveraging the capabilities of Ansible, this solution simplifies the management and maintenance of server infrastructure, saving time and ensuring consistency across the entire server fleet. Whether you are managing a small-scale environment or a large-scale infrastructure, this project provides an efficient and scalable approach to automate server management tasks with ease.
 
 ## Installation Process:
 
@@ -13,7 +14,7 @@ Follow the instructions in the [SSH Installation Guide](https://github.com/Saru2
 
 #### 2. Ansible Installation:
 
-Proceed with the installation of Ansible by following the steps outlined in the [Ansible Installation Guide](https://github.com/Saru2003/Automated-Server-Management-with-Ansible/blob/main/ansible%20installation%20guide.md).
+To install Ansible, it is recommended to fetch the latest version available from the official Ansible website or the Ansible GitHub repository. By installing the latest version, you can benefit from the most recent features, bug fixes, and improvements.
 
 #### 3. Virtual Servers Setup:
 
@@ -43,12 +44,13 @@ ansible all --key-file ~/.ssh/ansible -i inventory -m ping
 ```
  connects to each host in the inventory and pings them. To simplify this process, we can create a default configuration file called `ansible.cfg`. By setting defaults such as the inventory file and private key, we can shorten the command to 
  ```bash
- ansible all -m ping.
+ ansible all -m ping
  ```
 
 ### Ad-hoc Commands
 Ansible provides a range of ad-hoc commands for executing tasks on managed servers. Here are some basic commands:
 
+<img src="images/Screenshot_20230701_162901.png">
 - `ansible all --list-hosts`: Lists all the hosts in the inventory.
 - `ansible all -m gather_facts`: Retrieves information about the servers, such as processor and operating system details.
 - `ansible all -m gather_facts --limit <ip_address>`: Limits the command to a specific host.
@@ -74,7 +76,7 @@ ansible all -m apt -a "name=snapd state=latest" --become --ask-become-pass
  ### Ansible Playbooks for Automation
 Ansible Playbooks allow us to define a list of tasks that automatically execute against hosts. Consider the example playbook `ins_apache.yml`, which installs the latest version of Apache and PHP packages and updates the cache. The playbook contains separate tasks for Ubuntu and CentOS distributions to handle the differences in package management.
 
-Under the task "Install Apache2 and PHP package, update cache for Ubuntu," the __apt__ module is used to install the packages and update the cache. For CentOS, the __dnf __module is used. 
+Under the task `Install Apache2 and PHP package, update cache for Ubuntu` the ___apt___ module is used to install the packages and update the cache. For CentOS, the ___dnf___ module is used. 
 
 After installing Apache on the servers, it is essential to ensure that the service is running and accessible. While typing the IP address of one of the servers in your local machine's browser should display the Apache page for Ubuntu, the same isn't true for CentOS. In CentOS, although Apache is installed, it needs to be started, and communication on port 80 must be allowed to make it accessible.
 
@@ -90,7 +92,10 @@ To automate this process, the following steps can be included in your Ansible pl
 ```
 By including these steps in your playbook, the Apache service will be started on CentOS, allowing communication on port 80. This ensures that when you type the IP address of a CentOS server in your local machine's browser, you will see the Apache page, indicating a successful setup.
 
-## Site.yml: Customized Server Configuration
+## site.yml: Customized Server Configuration
+<img src="images/Screenshot_20230701_130512.png">
+<img src="images/Screenshot_20230701_130546.png">
+
 In this section, we will explore the `site.yml` playbook and its functionalities. The `site.yml` playbook builds upon the concepts discussed earlier and provides further customization options for server configuration.
 
 ### Inventory Groups
@@ -107,6 +112,8 @@ Similar to the `ins_apache.yml` playbook, the `site.yml` playbook allows the exe
 The `site.yml` playbook includes a task named `copy def_site.html` that copies a source file from the files group to the designated destination on the target hosts. 
 Additionally, appropriate user permissions are set for the copied file to ensure security and access control.
 
+<img src="images/Screenshot_20230701_130623.png">
+
 ### Utilizing Tags
 One notable addition in the `site.yml` playbook compared to `ins_apache.yml` is the use of `tags`. Tags allow for more granular control and selective execution of tasks.
 
@@ -114,7 +121,7 @@ To list the available tags in a playbook
 ```bash
 ansible-playbook --list-tags site.yml
 ```
-
+<img src="images/Screenshot_20230701_130327.png">
 Running a playbook but targeting specific tags
 ```bash
  ansible-playbook --tags db --ask-become-pass site.yml
